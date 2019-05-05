@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+    <script type= "text/javascript" language=javascript src=pacScript.js> </script>
+    <script type= "text/javascript" language=javascript src=ghostScript.js> </script>
+    <script type= "text/javascript" language=javascript src=fruitScript.js> </script>
+    <link rel = "stylesheet" type = "text/css" href = "Styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<body>
+<Header>
+    <h1>pac-man</h1>
+    <img id="imgPacman" src="pacman1.png">
+    <img class="rasPic" src="r.png" style="top: 95px;left: 240px;">
+    <img class="rasPic" src="r.png" style="top: 95px;left: 258px;">
+    <img class="rasPic" src="r.png" style="left:278px;top: 95px;">
+</Header>
+
+<Menu>
+    <li><a class="active" id="bWelcomeMenu" href="#">Welcome</a></li>
+    <li><a href="#" id="bSettingMenu">Settings/Game</a></li>
+    <li><a href="#" id="bAboutMenu">About</a></li>
+</Menu>
+
+<content>
+    <div id="welcome">
+        <ul>
+            <li><a href="#" class="round green" id="buttonLogIn">Login<span class="round">That is, if you already have an account.</span></a></li>
+            <li><a href="#" class="round red" id="buttonSignIn">Sign in<span class="round">But only if you really, really want to. </span></a></li>
+        </ul>
+    </div>
+    <div id="Singin">
+        <form id="signUpForm" >
+            <table>
+                <tr>
+                    <td><input class="s_textBox" id="username" name="username" type="text" placeholder="username" /></td>
+                    <td><label for="username" class="wornG"id ="w_username">username is not vaild</label></td>
+                </tr>
+                <tr>
+                    <td><input class="s_textBox" id="password" name="password" type="password" placeholder="password" /></td>
+                    <td><label for="password"class="wornG" id="w_password">password must contain at least 8 digits\char</label></td>
+                </tr>
+                <tr>
+                    <td><input class="s_textBox" id="firstname" name="firstname" type="text" placeholder="your first name" /></td>
+                    <td><label for="firstname"class="wornG" id="w_firstname">please fill this field</label></td>
+                </tr>
+                <tr>
+                    <td><input class="s_textBox" id="lastname" name="lastname" type="text" placeholder="your last name" /></td>
+                    <td><label for="lastname"class="wornG"id="w_lastname">please fill this field</label></td>
+                </tr>
+                <tr>
+                    <td><input class="s_textBox" id="email" name="email" type="email" placeholder="email" /></td>
+                    <td><label class="wornG" id="w_email">vaild email: example@example.com</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label style="margin-left: 8px;">Date of Birth:</label><br>
+                        <select id="b_month" name="DoBmonth" class="s_textBox" style="width: 90px">
+                            <option>Month</option>
+                            <option value="jan">1</option>
+                            <option value="feb">2</option>
+                            <option value="march">3</option>
+                            <option value="april">4</option>
+                            <option value="may">5</option>
+                            <option value="june">6</option>
+                            <option value="July">7</option>
+                            <option value="aug">8</option>
+                            <option value="sep">9</option>
+                            <option value="oct">10</option>
+                            <option value="nov">11</option>
+                            <option value="dec">12</option>
+                        </select>
+                        <select id ="b_day" name="DoBday" class="s_textBox" style="width: 90px">
+                            <option>day</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                            <option value='10'>10</option>
+                            <option value='11'>11</option>
+                            <option value='12'>12</option>
+                            <option value='13'>13</option>
+                            <option value='14'>14</option>
+                            <option value='15'>15</option>
+                            <option value='16'>16</option>
+                            <option value='17'>17</option>
+                            <option value='18'>18</option>
+                            <option value='19'>19</option>
+                            <option value='20'>20</option>
+                            <option value='21'>21</option>
+                            <option value='22'>22</option>
+                            <option value='23'>23</option>
+                            <option value='24'>24</option>
+                            <option value='25'>25</option>
+                            <option value='26'>26</option>
+                            <option value='27'>27</option>
+                            <option value='28'>28</option>
+                            <option value='29'>29</option>
+                            <option value='30'>30</option>
+                            <option value='31'>31</option>
+                        </select>
+                        <select id="b_year" name="DoByear" class="s_textBox" style="width: 90px">
+                            <option >year</option>
+                            <option value="1947">1947</option>
+                            <option value="1948">1948</option>
+                            <option value="1949">1949</option>
+                            <option value="1950">1950</option>
+                            <option value="1951">1951</option>
+                            <option value="1952">1952</option>
+                            <option value="1953">1953</option>
+                            <option value="1954">1954</option>
+                            <option value="1955">1955</option>
+                            <option value="1956">1956</option>
+                            <option value="1957">1957</option>
+                            <option value="1958">1958</option>
+                            <option value="1959">1959</option>
+                            <option value="1960">1960</option>
+                            <option value="1961">1961</option>
+                            <option value="1962">1962</option>
+                            <option value="1963">1963</option>
+                            <option value="1964">1964</option>
+                            <option value="1965">1965</option>
+                            <option value="1966">1966</option>
+                            <option value="1967">1967</option>
+                            <option value="1968">1968</option>
+                            <option value="1969">1969</option>
+                            <option value="1970">1970</option>
+                            <option value="1971">1971</option>
+                            <option value="1972">1972</option>
+                            <option value="1973">1973</option>
+                            <option value="1974">1974</option>
+                            <option value="1975">1975</option>
+                            <option value="1976">1976</option>
+                            <option value="1977">1977</option>
+                            <option value="1978">1978</option>
+                            <option value="1979">1979</option>
+                            <option value="1980">1980</option>
+                            <option value="1981">1981</option>
+                            <option value="1982">1982</option>
+                            <option value="1983">1983</option>
+                            <option value="1984">1984</option>
+                            <option value="1985">1985</option>
+                            <option value="1986">1986</option>
+                            <option value="1987">1987</option>
+                            <option value="1988">1988</option>
+                            <option value="1989">1989</option>
+                            <option value="1990">1990</option>
+                            <option value="1991">1991</option>
+                            <option value="1992">1992</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </td>
+                    <td><label for="b_year"class="wornG" id="w_date">please choose valid date</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="container">Male
+                            <input type="radio" name ="gender" value="male" id="rmale">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Female
+                            <input type="radio" name ="gender" value ="female" id="rfemale">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td><label for="rfemale"class="wornG" id="w_gender">please choose your gender</label></td>
+                </tr>
+            </table>
+            <input class="threeDButton" type="submit" value="register" id="register">
+        </form>
+    </div>
+    <div id ="Login">
+        <form id="loginForm">
+            <input id="L_username" name="username" type="text" placeholder="username"class="s_textBox" /><label for="L_username" style="color: red" id="w_loginuser">username is incorrect</label><br>
+            <input id="L_pass" name="password" type="password" placeholder="password" class="s_textBox"/><label for="L_pass" style="color: red" id="w_loginpass">password is incorrect</label><br>
+            <input id ="loginBtn" class="threeDButton" type="submit" name="login" value="login"><br>
+        </form>
+    </div>
+    <div id="settings">
+        <table id="S_table" style="align-items: center">
+            <tr>
+                <td><label style="color: white">Num of balls:</label></td>
+                <td><input id="s_numBalls" name ="numBalls" type="text"class="S_input"></td>
+                <td><label for="s_numBalls" class="wornG"id ="w_numOfball">ball must be between 50-90</label></td>
+            </tr>
+            <tr>
+                <td> <label style="color: white">Game time (sec):</label></td>
+                <td> <input id="s_gameTime" name ="gameTime" type="text"class="S_input" ></td>
+                <td><label for="s_gameTime" class="wornG"id ="w_gameTime">minimum time 60sec</label></td>
+
+            <tr>
+            <tr>
+                <td><label style="color: white">num of Monster:</label></td>
+                <td><input id="s_numMonster" name ="numMonster" type="text"class="S_input"></td>
+                <td><label for="s_numMonster" class="wornG"id ="w_numMonster">Monster must be between 1-3</label></td>
+
+        </tr>
+            <!--User moveMent                                                -->
+            <tr>
+                <td><label style="color: white">move up</label></td>
+                <td><input id="s_moveU" name ="moveup" type="text"class="S_input"><br></td>
+            </tr>
+            <tr>
+                <td><label style="color: white">move down</label></td>
+                <td><input id="s_moveD" name ="movedown" type="text" class="S_input"><br></td>
+            </tr>
+            <tr>
+                <td><label style="color: white">move left</label></td>
+                <td><input id="s_moveL" name ="moveleft" type="text"class="S_input"></td>
+            </tr>
+            <tr>
+                <td><label style="color: white">move right</label></td>
+                <td><input id="s_moveR" name ="moveright" type="text"class="S_input"></td>
+            </tr>
+        </table>
+        <!-- Color Picker     -->
+        <label>5 points color: </label>
+        <input type="color" id="s_color1" name ="color1" style="width: 35px" value="#00008B">
+        <label>15 points color: </label>
+        <input type="color" id="s_color2" name ="color2" style="width: 35px" value="#FF0000">
+        <label>25 points color: </label>
+        <input type="color" id="s_color3" name ="color3" style="width: 35px" value="#32CD32">
+        <br>
+        <br>
+        <input id="s_random" name="random" value="Random" type="button" class="p_butn">
+        <input id="s_letsPlay" name ="letsPlay" type="button" value="Lets Play" class="p_butn">
+    </div>
+    <div id="about" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 style="margin-block-start: 0.67em;">Alina Polei 321123689</h1><br>
+            <h1>Dror Uri 204454110</h1><br>
+            <p>We used the jQuery Plugin "howler" for setting the music during the game, "color picker" for choosing the desired colors for the dots on the board, and "jQuery validation" for validation the user's inputs in the login/register forms by a specified regex expresion.<br>
+                We didn't use any prepared template, we preferred to experience with it ourselves, but we used a lot the google to find the desired fabulous designs, animations, and parts of code that can help us, <br/>
+                for example, to draw the ghosts we found a helper function that actually draws the ghost on the canvas (without any images) including drawing the ghost's eyes according to its moving direction. <br>
+                Our difficulties:<br/>
+                *Sometimes it was difficult to debug the code because of the intervals that accrued every 250 ms.<br/>
+                *Setting the movement of the ghosts was a little bit tricky for us.<br/>
+            </p>
+        </div>
+    </div>
+    <div id="game">
+        <h2 id="playerName"></h2>
+        <h2 style="display: inline-block">SCORE: </h2><&nbsp>
+        <label id="lblScore">00</label><&nbsp><&nbsp><&nbsp>
+        <h2 style="display: inline-block">TIME: </h2><&nbsp>
+        <label id="lblTime">00</label>
+        <canvas id="lives" style="display: inline-block"></canvas>
+        <canvas id="canvas" height="600" width="600"></canvas>
+        <canvas id="ghostsCanvas" height="600" width="600" style="position: relative"></canvas>
+        <!--<div id="message"></div>-->
+        <svg class="animated zoomIn" viewBox="0 0 960 300">
+            <symbol class="animated zoomIn" id="s-text">
+                <text id="message" class="animated zoomIn" text-anchor="middle" x="50%" y="80%"></text>
+            </symbol>
+            <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+        <input id="bResetGame" class="p_butn" value="Start New Game" type="button" style="margin: 5px;">
+        <input id="bStopGame" class="p_butn" value="Stop Game" type="button" style="margin: 5px; background: red">
+    </div>
+</content>
+<Footer>
+    <i class='fas fa-volume-up' style='font-size:48px;color:red' id="soundOn"></i>
+    <i class='fas fa-volume-mute' style='font-size:48px;color:red'id="soundOf"></i>
+    <label style="display: block">Dror Uri 204454110</label>
+    <label>Alina Polei 321123689</label>
+    <label id="copyRights">	&#9400;Dror&Alina</label>
+</Footer>
+</body>
+</html>
